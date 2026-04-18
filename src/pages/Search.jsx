@@ -52,7 +52,7 @@ export default function Search() {
       setShowMore(false);
       setLoading(true);
       const searchQuery = urlParams.toString();
-      const res = await fetch(`/api/listings/get?${searchQuery}`);
+      const res = await fetch(`/api/listing/get?${searchQuery}`);
       const data = await res.json();
       if (data.length > 8) {
         setShowMore(true);
@@ -111,7 +111,7 @@ export default function Search() {
     const urlParams = new URLSearchParams(location.search);
     urlParams.set('startIndex' , startIndex);
     const searchQuery = urlParams.toString();
-    const res = await fetch (`/api/listings/get?${searchQuery}`);
+    const res = await fetch (`/api/listing/get?${searchQuery}`);
     const data = await res.json();
     if(data.length < 9){
       setShowMore(false);
